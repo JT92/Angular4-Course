@@ -10,11 +10,26 @@ import { Component } from '@angular/core';
                 {{ course }}
             </li>
         </ul>
+        <button class="btn btn-primary" 
+            [class.active]="isActive"
+            (click)="onSave($event)">Save</button>
+        <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Button</button>
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
     `
 })
 export class CoursesComponent {
-    title = "List of courses"
+    email = "me@email.com";
+    title = "List of courses";
+    isActive = true;
     courses;
+
+    onSave($event){
+        console.log("button was clicked", $event);
+    }
+
+    onKeyUp(){
+            console.log(this.email);
+    }
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
