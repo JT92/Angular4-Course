@@ -1,6 +1,10 @@
 
-<like
-    [likesCount]="tweet.tweetLikesCount"
-    [isActive]="tweet.isLiked"
-    [body]="tweet.body">
-</like> 
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+
+<ng-template #coursesList>
+    List of coursess
+</ng-template>
+
+<ng-template #noCourses>
+    No courses yet
+</ng-template>

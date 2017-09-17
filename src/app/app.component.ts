@@ -7,9 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AppComponent {
-  tweet = {
-      body: 'Here is the body of a tweet...',
-      tweetLikesCount: 2,
-      isLiked: false
-    }
-  }
+  courses = [1, 2]
+}
