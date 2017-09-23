@@ -7,5 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AppComponent {
-  courses = [1, 2]
+  courses = [
+    { id: 1, name: 'course1 '},
+  ]
 }
