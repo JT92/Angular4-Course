@@ -20,6 +20,13 @@ export class SignupFormComponent {
     password: new FormControl('', Validators.required)
   });
 
+  login() {
+    if (this.username.value === 'invalid')
+    this.form.setErrors({
+      invalidLogin: true
+    });
+  }
+
   get username() {
     return this.form.get('username');
   }
